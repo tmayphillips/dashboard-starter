@@ -1,8 +1,16 @@
-import Countdown from './src/countdown.js'
-import Giphy from './src/giphy.js'
+import Forex from './src/forex.js'
+import Quote from './src/quote.js'
+import Weather from './src/weather.js'
+import ToDo from './src/todo.js'
 
-let countdown = new Countdown(1,2);
-countdown.render();
+let forex = new Forex()
+forex.render()
 
-let gifpane = new Giphy();
-gifpane.render();
+let quote = new Quote()
+setInterval(quote.render(), 3000)
+
+let weather = new Weather()
+weather.render()
+
+let todo = new ToDo()
+todo.render()

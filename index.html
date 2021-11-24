@@ -5,16 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Dashboard</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="pane pane1">1</div>
-        <div class="pane pane2"><img src="https://media3.giphy.com/media/iDJQRjTCenF7A4BRyU/giphy.gif?cid=021aea08dhb71c4pws34xkce34prvkwveycgr4fstdk5g5ok&rid=giphy.gif&ct=g" alt=""></div>
-        <div class="pane pane3">3</div>
-        <div class="pane pane4">4</div>
+        <div id='header'>
+            <div id='header-content'>
+                <h1>Tiffany's Dashboard</h1>
+                <button id="authorize_button" class='login-button btn' style="display: none;">Sign In</button>
+                <button id="signout_button" class='login-button btn' style="display: none;">Sign Out</button>
+            </div>
+        </div>
+        <div id='page-content'>
+            <div class='sidebar todo'></div>
+            <div id='main-content'>
+                <div class="pane calendar" id='calendar'>
+                    <h1 id='date'></h1>
+                    <pre id="content" ></pre>
+                </div>
+                <div class="pane weather">
+                    <div id='current-weather'></div>
+                    <div id='canvas-div'>
+                        <canvas id='forecast' height='200px' width='400px'></canvas>
+                    </div>
+                </div>
+                <div class="pane forex">
+                    <div id="forex-chart"></div>
+                    <svg id="container"></svg>
+                </div>
+                <div class="pane quote"></div>
+            </div> 
+        </div>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Cormorant+Garamond&family=M+PLUS+Code+Latin:wght@500&display=swap" rel="stylesheet">    <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
     <script src="main.js" type="module"></script>
+    <script src='./src/google.js'></script>
+    <script async defer type="text/javascript" src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </body>
 </html>

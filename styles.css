@@ -1,0 +1,421 @@
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  --fontfamily: 'Trebuchet MS', sans-serif;
+}
+
+body {
+  font-family: var(--fontfamily);
+  background: rgb(173, 171, 171);
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container{
+  height: 100%;
+
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#header {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header-content {
+  display: flex;
+  font: 3vw 'M PLUS Code Latin', sans-serif;
+  text-transform: uppercase;
+}
+
+#header-content button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#page-content {
+  height: calc(100vh - 100px);
+  width: calc(100vw - 10px);
+  display: flex;
+}
+
+.sidebar {
+  width: 20vw;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+}
+
+#main-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 80vw;
+  flex: 1 0 38vw
+}
+
+.tasks {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.pane{
+  width:38vw;
+  height:40vh;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em;
+  border-radius: 5%;
+  background-color: #333;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 5px 5px 7px rgb(33 33 33 / 70%);
+}
+
+.main-content > * {
+  flex: 1 1 auto;
+}
+
+.pane1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    width: 300px; /* Full width */
+    height: 200px; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    border-radius: 5%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  form .btn {
+    margin: 10px;
+  }
+
+  .sidebar .btn {
+    margin: 5px;
+  }
+
+  #quote-details {
+    flex-direction: row;
+  }
+
+  .quote h2 {
+    font: 3vw 'Cormorant Garamond', serif;
+    padding: 20px;
+    background: -webkit-linear-gradient(left, red , white);
+    background: -o-linear-gradient(right, red, white);
+    background: -moz-linear-gradient(right, red, white);
+    background: linear-gradient(to right, red , white); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .quote h3 {
+    padding: 20px;
+    font: 2vw 'M PLUS Code Latin', sans-serif;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  ul,li{
+    list-style:none;
+    /* flex-direction: column; */
+  }
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+  ul li {
+    color:#000;
+    background:#ffc;
+    display:block;
+    height:10em;
+    width:10em;
+    color: blue;
+    padding:1em;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transform: rotate(-4deg);
+    transition: transform .15s linear;
+  }
+  
+  ul li:nth-child(even) {
+    height: 150px;
+    width: 150px;
+    color: blue;
+    transform:rotate(2deg);
+    position:relative;
+    top:5px;
+    background:#cfc;
+  }
+
+  ul li:nth-child(3n) {
+    height: 150px;
+    width: 150px;
+    color: blue;
+    transform:rotate(-2deg);
+    position:relative;
+    top:-5px;
+    background:#ccf;
+  }
+
+  /* ul li:nth-child(4n) {
+    height: 150px;
+    width: 150px;
+    color: blue;
+    transform:rotate(4deg);
+    position:relative;
+    top:5px;
+    background:#cfc;
+  } */
+
+  ul li:nth-child(n+4) {
+    display: none;
+  }
+  
+  ul li:hover,ul li:focus {
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.2);
+    position:relative;
+    z-index:5;
+  }
+  
+  ul li {
+    margin:1em;
+  }
+
+  .task-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .task-card p {
+    margin: 0;
+    height: 100px;
+    font: 2vw 'Comforter', cursive;
+    overflow-y:auto;
+  }
+
+  .tasks {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .buttonDiv {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttonDiv input {
+    background-color: black;
+    color: white;
+    border-radius: 3%;
+  }
+
+  .btn {
+    background-color: black;
+    color: white;
+    padding: 1%;
+    font: 1vw;
+    border-radius: 2em;
+    padding: 3%;
+  }
+
+  #signout_button {
+    padding: 5px;
+  }
+
+  .calendar {
+    color: white;
+  }
+
+  .calendar h1 {
+    margin: 10px 0 0 0;
+    font: 3vw 'M PLUS Code Latin', sans-serif;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(left, red , white);
+    background: -o-linear-gradient(right, red, white);
+    background: -moz-linear-gradient(right, red, white);
+    background: linear-gradient(to right, red , white); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .calendar h2 {
+    margin: 10px 0 0 0;
+    font: 1.5vw 'M PLUS Code Latin', sans-serif;
+  }
+
+  .calendar p {
+    margin: 0;
+  }
+
+  .calendar .today, .tomorrow {
+    font-size: 2vw
+  }
+
+  .calendar .tomorrow {
+    margin-top: 10px;
+  }
+
+  .calendar #content {
+    font: 1.6vw 'Cormorant Garamond', serif;
+  }
+
+  .forex {
+    justify-content: flex-start;
+  }
+
+  /* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border-top-left-radius: 1vw;
+  border-top-right-radius: 1vw;
+  margin: -1px 0 -1px -1px;
+  /* box-shadow: 5px 5px 7px rgb(33 33 33 / 70%); */
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1vw 1vw;
+  transition: 0.3s;
+
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+.forex-content {
+  display: none;
+  color: white;
+  font: 1.4vw 'Cormorant Garamond', serif;
+}
+
+.forex-content p {
+  margin: 5px;
+}
+
+.tablinks {
+  font: 1.6vw 'M PLUS Code Latin', sans-serif;
+}
+
+.canvas-div {
+  max-height: 200px;
+}
+
+canvas #forecast {
+  height: 200px;
+}
+
+#forecast {
+  height: 200px;
+  width: 30vw;
+  color: white;
+  margin: 1vw;
+}
+
+#current-weather {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media all and (max-width: 1200px) {
+  .sidebar {
+    width: 40vw;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #main-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 60vw;
+    flex: 1 0 auto
+  }
+
+  .pane{
+    width:50vw;
+  }
+
+  .tasks {
+    align-items: center;
+  }
+}
