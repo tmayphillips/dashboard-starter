@@ -278,7 +278,7 @@ body::-webkit-scrollbar {
     padding: 3%;
   }
 
-  #signout_button {
+  #signout_button, #authorize_button {
     padding: 5px;
   }
 

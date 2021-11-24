@@ -1,6 +1,6 @@
 class Weather{
-    api_key = 'W12NSR1B1ERXGe1ujranrqgRskG4CrUN'
-    // api_key = 'BcvC9BvJJeurviMh9B1WB9ksxqDeDSeN'
+    // api_key = 'W12NSR1B1ERXGe1ujranrqgRskG4CrUN'
+    api_key = 'BcvC9BvJJeurviMh9B1WB9ksxqDeDSeN'
     query = '77008'
     
     constructor() {}
